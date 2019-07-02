@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33F20A6C-0DD1-4461-AEB1-9886FE6D9A30}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TonalityMarkingAndDigest.web.demo</RootNamespace>
+    <AssemblyName>TonalityMarkingAndDigest-InProc.web.demo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName></SccProjectName>
+    <SccLocalPath></SccLocalPath>
+    <SccAuxPath></SccAuxPath>
+    <SccProvider></SccProvider>
+    <FileUpgradeFlags></FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="captcha, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\captcha.dll</HintPath>
+    </Reference>
+    <Reference Include="Lingvistics.Client-with-OM-TM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lingvistics.Client-with-OM-TM.dll</HintPath>
+    </Reference>
+    <Reference Include="LingvisticsWorkInProcess-with-OM-TM, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\LingvisticsWorkInProcess-with-OM-TM.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\BackcolorAllTonality.xslt" />
+    <Content Include="App_Data\FinalTonality.Digest.test.xslt" />
+    <Content Include="App_Data\FinalTonality.xslt" />
+    <Content Include="App_Data\FinalTonalityDividedSentence.xslt" />
+    <Content Include="App_Data\TopLevelTonality.xslt" />
+    <Content Include="App_Data\TopLevelTonalityDividedSentence.xslt" />
+    <Content Include="App_Data\Xml.xslt" />
+    <Content Include="bin\captcha.dll" />
+    <Content Include="bin\CommonServices\Translit.dll" />
+    <Content Include="bin\CommonServices\UMCommonServices.dll" />
+    <Content Include="bin\CoreferenceResolving.dll" />
+    <Content Include="bin\Core\GSServer.dll" />
+    <Content Include="bin\Core\Linguistics\AMConverter.dll" />
+    <Content Include="bin\Core\Linguistics\BlackBox.dll" />
+    <Content Include="bin\Core\Linguistics\CommonContainers.dll" />
+    <Content Include="bin\Core\Linguistics\CommonServices.dll" />
+    <Content Include="bin\Core\Linguistics\CoSeDi.dll" />
+    <Content Include="bin\Core\Linguistics\DBMS.dll" />
+    <Content Include="bin\Core\Linguistics\Dictionaries.dll" />
+    <Content Include="bin\Core\Linguistics\DigestAnalyzer.dll" />
+    <Content Include="bin\Core\Linguistics\LexicalAnalyzer.dll" />
+    <Content Include="bin\Core\Linguistics\LinguisticRev.dll" />
+    <Content Include="bin\Core\Linguistics\LingvoBaseManager.dll" />
+    <Content Include="bin\Core\Linguistics\MainAnalyse.dll" />
+    <Content Include="bin\Core\Linguistics\SemanticAnalyzer.dll" />
+    <Content Include="bin\Core\Linguistics\SyntaxAnalyzer.dll" />
+    <Content Include="bin\Core\Linguistics\SyntaxConstructions.dll" />
+    <Content Include="bin\Core\Linguistics\TransformGenerator.dll" />
+    <Content Include="bin\Core\Linguistics\Transliteration.dll" />
+    <Content Include="bin\Core\LoadManager.dll" />
+    <Content Include="bin\Core\NdxBaseManager.dll" />
+    <Content Include="bin\Core\NdxDataStorage.dll" />
+    <Content Include="bin\Core\NdxProcessor.dll" />
+    <Content Include="bin\Core\NdxQuery.dll" />
+    <Content Include="bin\Core\Supervisor.dll" />
+    <Content Include="bin\Database\AbbreviationEnglish\CombinatorySingleAbbreviations\DT_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationEnglish\CombinatorySingleAbbreviations\~T_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationEnglish\MultipleAbbreviations\DT_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationEnglish\MultipleAbbreviations\~T_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationEnglish\NominalSingleAbbreviations\DT_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationEnglish\NominalSingleAbbreviations\~T_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationEnglish\ProperSingleAbbreviations\DT_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationEnglish\ProperSingleAbbreviations\~T_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationRussian\CombinatorySingleAbbreviations\DT_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationRussian\CombinatorySingleAbbreviations\~T_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationRussian\MultipleAbbreviations\DT_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationRussian\MultipleAbbreviations\~T_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationRussian\NominalSingleAbbreviations\DT_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationRussian\NominalSingleAbbreviations\~T_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationRussian\ProperSingleAbbreviations\DT_Statistics.txt" />
+    <Content Include="bin\Database\AbbreviationRussian\ProperSingleAbbreviations\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombinatoryExtra\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombinatoryExtra\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\Combinatory\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\Combinatory\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombiSynonyms\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombiSynonyms\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesTree\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesTree\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesWords\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesWords\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticIDSourceTree\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticIDSourceTree\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsExtra\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsExtra\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsSynonims\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsSynonims\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\Semantics\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\Semantics\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\Syntax\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiEnglish\Syntax\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\CombinatoryExtra\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\CombinatoryExtra\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\Combinatory\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\Combinatory\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\CombiSynonyms\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\CombiSynonyms\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesTree\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesTree\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesWords\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesWords\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticIDSourceTree\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticIDSourceTree\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsExtra\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsExtra\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsSynonims\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsSynonims\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\Semantics\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\Semantics\~T_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\Syntax\DT_Statistics.txt" />
+    <Content Include="bin\Database\CoSeDiRussian\Syntax\~T_Statistics.txt" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormEnglish\DT_Statistics.txt" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormEnglish\~T_Statistics.txt" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormRussian\DT_Statistics.txt" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormRussian\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\Ending\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypes\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypes\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypeToMorphoInfo\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypeToMorphoInfo\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\NewWordsDeduction\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\NominalAlternativeSource\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\NominalAlternativeSource\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceForm\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceToMorpho\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceToMorpho\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSynonims\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSynonims\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\OneRoot\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\OneRoot\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceForm\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceToMorpho\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceToMorpho\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\Ending\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\Ending\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypes\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypes\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypeToMorphoInfo\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypeToMorphoInfo\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\NominalAlternativeSource\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\NominalAlternativeSource\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceForm\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceForm\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceToMorpho\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceToMorpho\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\NominalSynonims\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\NominalSynonims\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\OneRoot\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\OneRoot\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceForm\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceForm\~T_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceToMorpho\DT_Statistics.txt" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceToMorpho\~T_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\DetectWordsGroups\DT_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\DetectWordsGroups\~T_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroupsType\DT_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroupsType\~T_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroups\DT_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroups\~T_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstruction\DT_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstruction\~T_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\DetectWordsGroups\DT_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\DetectWordsGroups\~T_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroupsType\DT_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroupsType\~T_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroups\DT_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroups\~T_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstruction\DT_Statistics.txt" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstruction\~T_Statistics.txt" />
+    <Content Include="bin\Digest.WcfService.dll" />
+    <Content Include="bin\DiskSearchEngine.dll" />
+    <Content Include="bin\Linguistics.Core.Content.dll" />
+    <Content Include="bin\Linguistics.Core.dll" />
+    <Content Include="bin\LinguisticsKernel.dll" />
+    <Content Include="bin\Lingvistics.Client-with-OM-TM.dll" />
+    <Content Include="bin\Lingvistics.Types.dll" />
+    <Content Include="bin\LingvisticsWorkInProcess-with-OM-TM.dll" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\Logger.dll" />
+    <Content Include="bin\NER.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Offsets.dll" />
+    <Content Include="bin\OMTM-Dictionaries\OM\examples_error.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\first_word1.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\intr_word1.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\intr_word2.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_entity_opinion.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_phrasis_opinion1.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_phrasis_opinion2.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_verbs_opinion1.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_verbs_opinion2.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_verbs_opinion3.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_verbs_opinion4.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_verbs_opinion5.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_verbs_opinion6.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\list_verbs_opinion7.txt" />
+    <Content Include="bin\OMTM-Dictionaries\OM\pattern_opinion.xml" />
+    <Content Include="bin\OMTM-Dictionaries\OM\test_prop.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_adjectives_amplf.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_adjectives_neg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_adjectives_pos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_adverbs_amplf.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_adverbs_neg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_adverbs_pos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_collocation_amplf.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_collocation_neg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_collocation_neut.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_collocation_pos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_collocation_vneg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_collocation_vneut.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_collocation_vpos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_ner_neg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_ner_pos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_nouns_aneg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_nouns_apos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_nouns_neg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_nouns_pneg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_nouns_pos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_nouns_ppos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_flxneg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_flxpos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_link.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_neg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_opp_neg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_opp_pos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_pos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_pure_neg.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\list_verbs_pure_pos.txt" />
+    <Content Include="bin\OMTM-Dictionaries\TM\mod_test.xml" />
+    <Content Include="bin\OMTM-Dictionaries\TM\order_rules.xml" />
+    <Content Include="bin\OMTM-Dictionaries\TM\order_rules_homogenous.xml" />
+    <Content Include="bin\OMTM-Dictionaries\TM\order_rules_participial.xml" />
+    <Content Include="bin\OMTM-Dictionaries\TM\rules.xml" />
+    <Content Include="bin\OpinionMining.WcfService.dll" />
+    <Content Include="bin\PTS.dll" />
+    <Content Include="bin\SemanticResolution.dll" />
+    <Content Include="bin\SimpleEntities.dll" />
+    <Content Include="bin\SurfaceSyntaxAnalyzer.dll" />
+    <Content Include="bin\TextMining.Service.dll" />
+    <Content Include="bin\TextParsing.dll" />
+    <Content Include="bin\TonalityMarking.WcfService.dll" />
+    <Content Include="bin\UserResources\DigestDicts\post.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\entity.xml" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-Email-dot.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-Email-provider.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-Email-providerFull.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-Email-dog.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-currency.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-increase-and-decrease.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-Document-management.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-units-length-measurements.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-units-mass-measurements.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-units-speed-measurements.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-units-measurements.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-keyword-documents.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-Document-management-systems.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-nouns-addresses-ANG.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-nouns-addresses-ROS.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-nouns-houses-ROS.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-nouns-apartments-ROS.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-nouns-cases-ROS.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-nouns-buildings-ROS.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-specific-word-documents.txt" />
+    <Content Include="bin\UserResources\EntityExpressions\dict-numbers-in-words.txt" />
+    <Content Include="bin\UserResources\NER\templateNER.txt" />
+    <Content Include="bin\UserResources\NounVerbs\nounverbs_ie_exclusion.txt" />
+    <Content Include="bin\UserResources\NounVerbs\nounverbs_no_ie.txt" />
+    <Content Include="bin\UserResources\PatentHomonymy\Adjective.txt" />
+    <Content Include="bin\UserResources\PatentHomonymy\Noun.txt" />
+    <Content Include="bin\UserResources\PTS\en_entity.xml" />
+    <Content Include="bin\UserResources\PTS\ru_entity.xml" />
+    <Content Include="bin\UserResources\SentenceSeparation\adjuncts.txt" />
+    <Content Include="bin\UserResources\SentenceSeparation\indefinite pronouns.txt" />
+    <Content Include="bin\UserResources\SentenceSeparation\parenthesis.txt" />
+    <Content Include="bin\UserResources\StopDictionaries\PTS\StopEntities.txt" />
+    <Content Include="bin\UserResources\StopDictionaries\PTS\StopWords.txt" />
+    <Content Include="bin\UserResources\StopDictionaries\SemanticNetwork\StopEntities.txt" />
+    <Content Include="bin\UserResources\StopDictionaries\SemanticNetwork\StopWords.txt" />
+    <Content Include="bin\UserResources\StopDictionaries\Tonality\StopEntities.txt" />
+    <Content Include="bin\UserResources\StopDictionaries\Tonality\StopWords.txt" />
+    <Content Include="bin\UserResources\TextParser\BeforeNoProper.txt" />
+    <Content Include="bin\UserResources\TextParser\BeforeProperOrNumber.txt" />
+    <Content Include="bin\UserResources\TextParser\Domens.txt" />
+    <Content Include="bin\UserResources\TextParser\FamilyPrefixes.txt" />
+    <Content Include="bin\UserResources\TextParser\Interjections.txt" />
+    <Content Include="bin\UserResources\TextParser\Smiles.txt" />
+    <Content Include="bin\Utils.dll" />
+    <Content Include="Captcha.aspx" />
+    <Content Include="rc\css\style.css" />
+    <Content Include="rc\javascript\jquery-1.9.1.js" />
+    <Content Include="rc\javascript\main.js" />
+    <Content Include="index.html" />
+    <Content Include="description.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Extensions.cs" />
+    <Compile Include="App_Code\Config.cs" />
+    <Compile Include="App_Code\AntiBotHelper.cs" />
+    <Compile Include="Captcha.aspx.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Captcha.aspx.designer.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RESTProcessHandler.ashx.cs">
+      <DependentUpon>RESTProcessHandler.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RESTProcessHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CaptchaImageHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Database\AbbreviationEnglish\CombinatorySingleAbbreviations\DT_HashArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\CombinatorySingleAbbreviations\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\CombinatorySingleAbbreviations\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\MultipleAbbreviations\DT_HashArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\MultipleAbbreviations\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\MultipleAbbreviations\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\NominalSingleAbbreviations\DT_HashArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\NominalSingleAbbreviations\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\NominalSingleAbbreviations\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\ProperSingleAbbreviations\DT_HashArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\ProperSingleAbbreviations\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\AbbreviationEnglish\ProperSingleAbbreviations\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\CombinatorySingleAbbreviations\DT_HashArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\CombinatorySingleAbbreviations\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\CombinatorySingleAbbreviations\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\MultipleAbbreviations\DT_HashArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\MultipleAbbreviations\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\MultipleAbbreviations\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\NominalSingleAbbreviations\DT_HashArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\NominalSingleAbbreviations\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\NominalSingleAbbreviations\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\ProperSingleAbbreviations\DT_HashArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\ProperSingleAbbreviations\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\AbbreviationRussian\ProperSingleAbbreviations\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombinatoryExtra\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombinatoryExtra\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombinatoryExtra\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Combinatory\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Combinatory\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Combinatory\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombiSynonyms\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombiSynonyms\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\CombiSynonyms\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesTree\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesTree\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesTree\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesWords\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesWords\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticClassesWords\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticIDSourceTree\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticIDSourceTree\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticIDSourceTree\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsExtra\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsExtra\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsExtra\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsSynonims\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsSynonims\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\SemanticsSynonims\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Semantics\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Semantics\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Semantics\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Semantics\SematicSuffixes.dct" />
+    <Content Include="bin\Database\CoSeDiEnglish\Syntax\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Syntax\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiEnglish\Syntax\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\CombinatoryExtra\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\CombinatoryExtra\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\CombinatoryExtra\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Combinatory\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Combinatory\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Combinatory\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\CombiSynonyms\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\CombiSynonyms\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\CombiSynonyms\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesTree\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesTree\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesTree\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesWords\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesWords\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticClassesWords\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticIDSourceTree\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticIDSourceTree\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticIDSourceTree\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsExtra\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsExtra\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsExtra\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsSynonims\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsSynonims\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\SemanticsSynonims\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Semantics\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Semantics\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Semantics\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Semantics\SematicSuffixes.dct" />
+    <Content Include="bin\Database\CoSeDiRussian\Syntax\DT_HashArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Syntax\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\CoSeDiRussian\Syntax\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\DownloadInfo_DBMS.ini" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormEnglish\DT_HashArr.dta" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormEnglish\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormEnglish\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormRussian\DT_HashArr.dta" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormRussian\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\ITLPTest1\DBMS\NewFormRussian\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\Ending\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\Ending\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\Ending\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\Ending\ID_to_LF.dta" />
+    <Content Include="bin\Database\MorphoEnglish\Ending\LF_to_ID.dta" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypes\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypes\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypes\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypes\ID_TypeInfo.dta" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypeToMorphoInfo\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypeToMorphoInfo\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\MorphoTypeToMorphoInfo\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NewWordsDeduction\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NewWordsDeduction\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NewWordsDeduction\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NewWordsDeduction\ID_to_LF.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NewWordsDeduction\LF_to_ID.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalAlternativeSource\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalAlternativeSource\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalAlternativeSource\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceForm\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceForm\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceForm\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceForm\ID_to_LF.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceForm\LF_to_ID.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceToMorpho\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceToMorpho\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSourceToMorpho\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSynonims\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSynonims\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\NominalSynonims\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\OneRoot\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\OneRoot\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\OneRoot\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceForm\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceForm\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceForm\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceForm\ID_to_LF.dta" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceForm\LF_to_ID.dta" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceToMorpho\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceToMorpho\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoEnglish\ProperSourceToMorpho\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\Ending\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\Ending\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\Ending\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\Ending\ID_to_LF.dta" />
+    <Content Include="bin\Database\MorphoRussian\Ending\LF_to_ID.dta" />
+    <Content Include="bin\Database\MorphoRussian\Ending\PartOfWord.db" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypes\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypes\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypes\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypes\ID_TypeInfo.dta" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypeToMorphoInfo\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypeToMorphoInfo\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\MorphoTypeToMorphoInfo\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalAlternativeSource\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalAlternativeSource\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalAlternativeSource\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceForm\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceForm\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceForm\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceForm\ID_to_LF.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceForm\LF_to_ID.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceToMorpho\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceToMorpho\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSourceToMorpho\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSynonims\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSynonims\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\NominalSynonims\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\OneRoot\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\OneRoot\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\OneRoot\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceForm\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceForm\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceForm\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceForm\ID_to_LF.dta" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceForm\LF_to_ID.dta" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceToMorpho\DT_HashArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceToMorpho\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\MorphoRussian\ProperSourceToMorpho\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\Ndx_dbms.ini" />
+    <Content Include="bin\Database\NewWordForms1\DBMS\NewFormEnglish\DT_HashArr.dta" />
+    <Content Include="bin\Database\NewWordForms1\DBMS\NewFormEnglish\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\NewWordForms1\DBMS\NewFormEnglish\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\NewWordForms1\DBMS\NewFormRussian\DT_HashArr.dta" />
+    <Content Include="bin\Database\NewWordForms1\DBMS\NewFormRussian\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\NewWordForms1\DBMS\NewFormRussian\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\SS_DBMS.ini" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\DetectWordsGroups\DT_HashArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\DetectWordsGroups\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\DetectWordsGroups\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroupsType\DT_HashArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroupsType\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroupsType\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroups\DT_HashArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroups\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstructionGroups\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstruction\DT_HashArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstruction\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsEnglish\SyntaxConstruction\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\DetectWordsGroups\DT_HashArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\DetectWordsGroups\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\DetectWordsGroups\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroupsType\DT_HashArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroupsType\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroupsType\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroups\DT_HashArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroups\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstructionGroups\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstruction\DT_HashArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstruction\DT_RecordsArr.dta" />
+    <Content Include="bin\Database\SyntaxConstructionsRussian\SyntaxConstruction\DT_ValuesArr.dta" />
+    <Content Include="bin\Database\UserTextStorageData.ini" />
+    <Content Include="bin\ss.ini" />
+    <Content Include="bin\UserResources\DigestDicts\citata_verbs.dct" />
+    <Content Include="bin\UserResources\DigestDicts\deleted_org_prefixes.dct" />
+    <Content Include="bin\UserResources\GeographicNames\GeoNames.utf8.data" />
+    <Content Include="bin\UserResources\GeographicNames\GeoNames.utf8.index" />
+    <Content Include="bin\UserResources\NER\models\model" />
+    <Content Include="bin\UserResources\StopDictionaries\PTS\adjectives.dct" />
+    <Content Include="bin\UserResources\StopDictionaries\reductions.dct" />
+    <Content Include="bin\UserResources\StopDictionaries\SemanticNetwork\adjectives.dct" />
+    <Content Include="bin\UserResources\StopDictionaries\Tonality\adjectives.dct" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Database\DownloadInfo\DownloadInfo\" />
+    <Folder Include="bin\Database\SemanticConstructionsEnglish\DetectWordsGroups\" />
+    <Folder Include="bin\Database\SemanticConstructionsEnglish\SyntaxConstructionGroupsType\" />
+    <Folder Include="bin\Database\SemanticConstructionsEnglish\SyntaxConstructionGroups\" />
+    <Folder Include="bin\Database\SemanticConstructionsEnglish\SyntaxConstruction\" />
+    <Folder Include="bin\Database\SemanticConstructionsRussian\DetectWordsGroups\" />
+    <Folder Include="bin\Database\SemanticConstructionsRussian\SyntaxConstructionGroupsType\" />
+    <Folder Include="bin\Database\SemanticConstructionsRussian\SyntaxConstructionGroups\" />
+    <Folder Include="bin\Database\SemanticConstructionsRussian\SyntaxConstruction\" />
+    <Folder Include="bin\Database\SyntaxConstructionsRussian_NaturalQuery\DetectWordsGroups\" />
+    <Folder Include="bin\Database\SyntaxConstructionsRussian_NaturalQuery\SyntaxConstructionGroupsType\" />
+    <Folder Include="bin\Database\SyntaxConstructionsRussian_NaturalQuery\SyntaxConstructionGroups\" />
+    <Folder Include="bin\Database\SyntaxConstructionsRussian_NaturalQuery\SyntaxConstruction\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1234</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4567/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl></CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+</Project>
