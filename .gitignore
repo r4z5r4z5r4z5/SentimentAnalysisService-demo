@@ -1,0 +1,7 @@
+/.vs/*
+/bin/*.pdb
+/bin/TonalityMarkingAndDigest-InProc.web.demo.*
+/obj/*
+/(logs)/*
+*.csproj.user
+*.rar
